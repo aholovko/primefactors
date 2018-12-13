@@ -25,7 +25,7 @@ func TestPrimeFactors(t *testing.T) {
 
 func primeFactors(n int) []int {
 	factors := []int{}
-	if n == 2 {
+	if n > 1 {
 		factors = append(factors, 2)
 	}
 	return factors
