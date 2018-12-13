@@ -32,15 +32,13 @@ func TestPrimeFactors(t *testing.T) {
 
 func primeFactors(n int) []int {
 	factors := []int{}
-	if n > 1 {
-		for n%2 == 0 {
-			factors = append(factors, 2)
-			n /= 2
+	divisor := 2
+	for n > 1 {
+		for n%divisor == 0 {
+			factors = append(factors, divisor)
+			n /= divisor
 		}
-		for n%3 == 0 {
-			factors = append(factors, 3)
-			n /= 3
-		}
+		divisor++
 	}
 	if n > 1 {
 		factors = append(factors, n)
