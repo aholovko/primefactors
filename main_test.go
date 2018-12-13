@@ -19,6 +19,7 @@ func TestPrimeFactors(t *testing.T) {
 		{6, []int{2, 3}},
 		{7, []int{7}},
 		{8, []int{2, 2, 2}},
+		{9, []int{3, 3}},
 	}
 	for _, tt := range tests {
 		t.Run(fmt.Sprintf("%d", tt.arg), func(t *testing.T) {
@@ -35,6 +36,10 @@ func primeFactors(n int) []int {
 		for n%2 == 0 {
 			factors = append(factors, 2)
 			n /= 2
+		}
+		for n%3 == 0 {
+			factors = append(factors, 3)
+			n /= 3
 		}
 	}
 	if n > 1 {
