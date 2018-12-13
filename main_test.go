@@ -16,6 +16,7 @@ func TestPrimeFactors(t *testing.T) {
 		{3, []int{3}},
 		{4, []int{2, 2}},
 		{5, []int{5}},
+		{6, []int{2, 3}},
 	}
 	for _, tt := range tests {
 		t.Run(fmt.Sprintf("%d", tt.arg), func(t *testing.T) {
